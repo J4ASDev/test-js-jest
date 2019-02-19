@@ -1,4 +1,4 @@
-import { numbers } from '../numbers'
+import { numbers } from '../js/numbers'
 
 describe('Comparacion de numeros', () => {
   test('Mayor que', () => {
