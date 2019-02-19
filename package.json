@@ -1,0 +1,17 @@
+{
+  "name": "test-js-jest",
+  "version": "1.0.0",
+  "description": "Test with Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Jonathan Araujo",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^23.6.0"
+  }
+}
