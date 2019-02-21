@@ -5,10 +5,10 @@ describe('Comprobar que existe un elemento', () => {
     expect(arrayFruits()).toContain('banana');
   });
 
-  test('No tiene una platano?', () => {
-    expect(arrayFruits()).not.toContain('platano');
+  test('No tiene un color rosado?', () => {
+    expect(arrayColors()).not.toContain('rosado');
   });
-  
+
   test('Cantidad de elementos', () => {
     expect(arrayFruits()).toHaveLength(5);
   });

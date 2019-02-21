@@ -18,6 +18,6 @@ describe('Comparacion de numeros', () => {
   });
 
   test('Numeros flotantes', () => {
-    expect(numbers(0.3, 0.3)).toBeCloseTo(0.6)
+    expect(numbers(0.3, 0.3)).toBeCloseTo(0.09)
   })
 })
