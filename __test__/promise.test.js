@@ -1,10 +1,9 @@
-import { getDataFromApi } from '../js/promise'
+import { getDataFromApi, urlRickAndMorty } from '../js/getDataFromApi';
 
 describe('Probando promesas', () => {
   test('Peticion a un Api: Rick and Morty', done => {
-    const url = 'https://rickandmortyapi.com/api/character/'
 
-    getDataFromApi(url).then(data => {
+    getDataFromApi(urlRickAndMorty).then(data => {
       expect(data.results.length).toBeGreaterThanOrEqual(0);
       done();
     });
