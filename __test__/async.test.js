@@ -1,18 +1,19 @@
-import { getDataFromApi, urlRickAndMorty, apiError  } from '../js/getDataFromApi';
+import { getDataFromApi} from '../js/getDataFromApi';
+import api from '../utils/apis';
 
 describe('Probando Async_Await', () => {
   test('Peticion a el api: Rick and Morty', async () => {
-     await getDataFromApi(urlRickAndMorty).then(data => {
+     await getDataFromApi(api.urlRickAndMorty).then(data => {
        expect(data.results.length).toBeGreaterThanOrEqual(0);
      });
 
-     await getDataFromApi(`${urlRickAndMorty}1`).then(data => {
+     await getDataFromApi(`${api.urlRickAndMorty}1`).then(data => {
        expect(data.name).toEqual('Rick Sanchez');
      });
   });
 
   test('Peticion a el api: Errores', async () => {
-    const peticion = getDataFromApi(`${apiError}404`);
+    const peticion = getDataFromApi(`${api.urlError}404`);
     await expect(peticion).rejects.toEqual(Error('Request failed with status code 404'));
   });
 

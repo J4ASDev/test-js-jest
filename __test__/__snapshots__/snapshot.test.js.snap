@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshots Comparando con datos locales 1`] = `
+Object {
+  "gender": undefined,
+  "id": undefined,
+  "name": undefined,
+  "species": undefined,
+  "status": undefined,
+}
+`;
+
+exports[`Snapshots Tenemos una exepcion dentro del Codigo 1`] = `
+Object {
+  "id": Any<Number>,
+  "name": "Jonathan Araujo",
+}
+`;
