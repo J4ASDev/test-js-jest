@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Guia Jest</title>
+</head>
+<body>
+  <header>
+    <figure>
+      <img src="./images/header_jest.png" alt="header_jest" width="400">
+      <h1>Guia de Jest</h1>
+    </figure>
+  </header>
+  <div>
+
+  </div>
+  <section>
+    <h2>Introduccion</h2>
+    <article>
+      <h3>Qué son las pruebas unitarias</h3>
+        
+      <p> 
+        La prueba unitarias son un proceso de desarrollo de software en donde se toman todos 
+        los bloques de codigo de una aplicación y se examinan individual e independientemente
+        para un funcionamiento adecuado. Así, todo lo que vamos pasando sabemos que esta funcionando 
+        correctamente y que no hay ningún inconveniente o bug.
+      </p>
+
+      <p>Las características de las pruebas unitarias son:</p>
+      <ul>
+        <li><span>Automatizable:</span> Deben correr sin ningún proceso manual.</li>
+        <li><span>Total Cobertura:</span> Debemos de pasar por cada bloque escrito.</li>
+        <li><span>Reutilizables:</span> Podemos usarlas para probar otros bloques.</li>
+        <li><span>Independientes:</span> No pueden depender de otra prueba para funcionar.</li>
+        <li><span>Rápidas de crear:</span> Tienen que ser algo conciso que prueben algo muy particular.</li>
+      </ul>
+
+      <p>Ventajas de las pruebas unitarias:</p>
+      <ul>
+        <li>Proporciona un trabajo ágil.</li>
+        <li>Calidad del código.</li>
+        <li>Detectar errores rapido.</li>
+        <li>Facilita los cambios y favorece la integración.</li>
+        <li>Proporciona información.</li>
+        <li>Reduce el coste.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Que es Jest</h3>
+
+      <p>
+        Jest es una herramienta creada y mantenida por la comunidad open source con apoyo de Facebook.
+        Jest surgió con el objetivo de agregar pruebas unitarias a proyectos con react pero ha sido tan
+        importante que cada vez se emplea en mas proyectos con otros frameworks.
+      </p>
+    </article>
+
+    <article>
+      <h3>Como estructurar una prueba con Jest</h3>
+
+      <p>
+        Antes de pasar a la segunda etapa, tenemos que tener en claro la base de Jest (Pruebas unitarias en general),
+        como se estructura una prueba y como funciona un poco el api que nos ofrece Jest.
+      </p>
+
+      <p>Veamos 3 palabras que seran vitales en nuestro camino de las pruebas unitarias:</p>
+      <ul>
+        <li>describe(): Crea un bloque que agrupa varias pruebas relacionadas. Recibe 2 parametros:
+          <ol>
+            <li>Una descipcion/string: 'Bloque de pruebas'</li>
+            <li>Una funcion anonima: () => {}</li>
+          </ol>
+          <p>Resultado: describe('Nuevo bloque de prueba', () => {} )</p>
+        </li>
+        <li>test(): El Método sirve para ejecutar una prueba. Recibe 2 parametros:
+          <ol>
+            <li>Una descipcion/string: 'Bloque de pruebas'</li>
+            <li>Una funcion anonima: () => {}</li>
+          </ol>
+          <p>Resultado: test('Primera prueba!', () => {} )</p>
+        </li>
+        <li>expect(): Se utiliza cada vez que desea testear un valor. Recibe 1 parametro:
+          <ol>
+            <li>Un valor con el cual interactuar</li>
+          </ol>
+        </li>
+      </ul>
+
+      <p>Una vez entendido que hacen estas tres palabras podremos crear nuestra primera prueba;</p>
+
+<!-- EXAMPLE CODE -->
+  <pre>
+    <code>
+      describe('Bloque de pruebas', () => {
+          test('Primera prueba', () => {
+              expect().toBe();
+          });
+          test('Segunda prueba', () => {
+              expect().toBe();
+          });
+      });
+    </code>
+  </pre>
+<!-- EXAMPLE CODE -->
+
+    </article>
+  </section>
+
+  <section>
+    <h2>Desarollo</h2>
+    <article>
+      <h3>Comparadores Comunes</h3>
+      <p>Los comparadores comunes nos permiten probar los valores de diferentes maneras.</p>
+      <ul>
+        Los comparadores comunes pueden ser:
+        <li>toBe(): </li>
+        <li>not.toBe()</li>
+      </ul>
+      <p>Ejemplo: </p>
+
+<!-- EXAMPLE CODE -->
+<pre>
+  <code>
+    test('two plus two is four', () => {
+      expect(2 + 2).toBe(4);
+    });
+  </code>
+</pre>
+<!-- EXAMPLE CODE -->
+
+  </article>
+  <article>
+    <h3>Numeros</h3>
+    <p>La mayoría de las formas de comparar números tienen equivalentes de matcher.</p>
+    <ul>
+      Los Métodos para numeros que nos provee jest son:
+      <li>toBeGreaterThan: El valor debe ser mayor a la comparacion.</li>
+      <li>toBeGreaterThanOrEqual: El valor debe ser mayor o igual a la comparacion.</li>
+      <li>toBeLessThan: El valor debe ser menor a la comparacion.</li>
+      <li>toBeLessThanOrEqual: El valor debe ser menor o igual a la comparacion</li>
+    </ul>
+<!-- EXAMPLE CODE -->
+<pre>
+  <code>
+    test('two plus two', () => {
+      const value = 2 + 2;
+      expect(value).toBeGreaterThan(3);
+      expect(value).toBeGreaterThanOrEqual(3.5);
+      expect(value).toBeLessThan(5);
+      expect(value).toBeLessThanOrEqual(4.5);
+    });
+  </code>
+</pre>
+<!-- EXAMPLE CODE -->
+      
+    </article>
+    <article>
+      <h3>Verdadero</h3>
+      <p>En las pruebas, a veces es necesario distinguir entre undefined, null, true o false.</p>
+      <ul>
+        Los métodos que nos provee Jest para hacer estas validaciones son:
+        <li>.toBeNull(): El valor debe ser nulo/null</li>
+        <li>.toBeTruthy(): El valor debe ser verdadero/true</li>
+        <li>.toBeFalsy(): El valor debe ser falso/false</li>
+        <li>.toBeUndefined(): El valor debe ser indefinido/undifined</li>
+        <span>Nota: Tambien podemos negar las expreciones a comparar usando .not.Metodo()</span>
+      </ul>
+    </article>
+    <article>
+      <h3>Arrays</h3>
+    </article>
+    <article>
+      <h3>Strings</h3>
+    </article>
+    <article>
+      <h3>Testing Asynchronous Code</h3>
+    </article>
+    <article>
+      <h3>Callbacks</h3>
+    </article>
+    <article>
+      <h3>Promesas</h3>
+    </article>
+    <article>
+      <h3>Reject y resolve</h3>
+    </article>
+    <article>
+      <h3>Async/Await</h3>
+    </article>
+    <article>
+      <h3>Aplicaciones de testing para Async/Await</h3>
+    </article>
+    <article>
+      <h3>Snapshot Testing</h3>
+    </article>
+    <article>
+      <h3>Excepciones Snapshot</h3>
+    </article>
+  </section>
+  <section>
+    <h3>Conclusiones</h3>
+    <article>Informacion para avanzar en jest</article>
+    <article>Post recomendados y otras guias interesantes</article>
+  </section>
+  <footer>Corazon :3</footer>
+</body>
+</html>
